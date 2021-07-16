@@ -19,12 +19,15 @@
                 <li>
                     <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
                 </li>
-                <li>
-                    <a href="{{ route('posts') }}" class="p-3">Post</a>
-                </li>
-                <li>
-                    <a href="{{ route('comment') }}" class="p-3">Comment</a>
-                </li>
+                {{-- @if(auth()->user()->role == "admin" ) --}}
+
+                    <li>
+                        <a href="{{ route('posts') }}" class="p-3">Post</a>
+                    </li>
+
+                {{-- @endif --}}
+
+
             @endauth
         </ul>
 

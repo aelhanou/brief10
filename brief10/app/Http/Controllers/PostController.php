@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+
     public function index()
     {
-
-
+        if(Auth::user()->role == "user")
+        {
+            return redirect()->route("home");
+        }
         return view('posts.index');
     }
 
     public function store(Request $request)
     {
 
+        if(Auth::user()->role == "user")
+        {
+            return redirect()->route("home");
+        }
         $path = '';
 
 

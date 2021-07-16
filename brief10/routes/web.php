@@ -38,6 +38,18 @@ Route::get('/', function(){
 })->name('home');
 
 
+Route::put('/edit', function(){
+
+    return view('edit');
+})->name('edit');
+Route::get('/Readedit/{id}', [DashboardController::class,'Readedit'])->name('dashboard.Readedit');
+Route::put('/edit/{id}', [DashboardController::class,'edit'])->name('dashboard.edit');
+
+
+
+Route::delete('/delete/{id}', [DashboardController::class,'Delete'])->name('dashboard.Delete');
+
+
 
 Route::get('/comment', [CommentsController::class,'index'])->name('comment');
 Route::get('/comment/{id}', [CommentsController::class,'store']);
